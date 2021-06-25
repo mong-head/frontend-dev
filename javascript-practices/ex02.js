@@ -22,4 +22,14 @@ console.log("s : " + typeof(s)); // string
 
 console.log(s.toUpperCase());
 console.log(i.toString());
-//console.log(u.toString()); // error : undefined는 객체로 만들 수 있는 생성자 부를 수 X
+//console.log(u.toString()); // error : undefined는 객체로 만들 수 있는 생성자 부를 수 X'
+
+console.log("=====object=====")
+
+var i2 = new Number(10);
+
+console.log("i2 : " + typeof(i2)); // object
+console.log("null : " + typeof(i2)); // object
+
+var f = function(a,b){ return a+b;};
+console.log("f : " + typeof(f)); // object
