@@ -33,3 +33,7 @@ console.log("null : " + typeof(i2)); // object
 
 var f = function(a,b){ return a+b;};
 console.log("f : " + typeof(f)); // object
+
+var f = new Function("a","b","return a+b");
+console.log("f : " + typeof(f)); // object
+
