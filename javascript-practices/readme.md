@@ -52,3 +52,12 @@ console.log("Hello World")
     * constructor : 대문자로 시작
 
 ## ex08 (JS Object 3)
+
+* object의 확장성
+    * function type도 확장 가능
+    * object아닌 primitive type은 확장 X
+
+## ex09 (JS Object 4)
+
+* prototype
+    * prototype기반 상속
