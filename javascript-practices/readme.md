@@ -1,10 +1,10 @@
 # javascript practices
 
-## ex01
+### ex01
 
 console.log("Hello World")
 
-## ex02
+### ex02
 
 * variance
     * type
@@ -17,13 +17,13 @@ console.log("Hello World")
             * object
             * function (: function type이지만 object)
 
-## ex03
+### ex03
 
 * null vs undefined
     * null : object type
     * undefined : primitive type
 
-## ex04
+### ex04
 
 * lexical scope
     * function scope
@@ -32,32 +32,65 @@ console.log("Hello World")
         * const : 상수
         * let : 변수
 
-## ex05
+### ex05
 
 * statement (구문)
     * JS 실행 단위
     * semi-colon(;) : 구문 구분 단위, JS는 같은 줄에 한 구문인 경우 ; 안붙여도 됨
 
-## ex06 (JS Object 1)
+## JS Object
+
+### ex06 
 
 * object type 생성
     1. new (생성자 함수)
     2. {} literal
     3. JSON
 
-## ex07 (JS Object 2)
+### ex07
 
 * function type 생성
     * general function : 소문자로 시작
     * constructor : 대문자로 시작
 
-## ex08 (JS Object 3)
+### ex08
 
 * object의 확장성
     * function type도 확장 가능
     * object아닌 primitive type은 확장 X
 
-## ex09 (JS Object 4)
+### ex09
 
 * prototype
     * prototype기반 상속
+
+## 내장 객체
+
+### ex10 ( 내장 객체 : Array )
+
+* Array
+    * 배열의 유연성 : 동적으로 배열 늘어남
+    * Object와 거의 유사하지만, Array는 length, forEach를 사용할 수 있음
+        * length는 숫자 property에 대해서만 관리
+        * forEach도 숫자 property에 대해서만 forEach로 요소를 순회
+
+### ex11 ( 내장 객체 : Array )
+
+* Array
+    * constructor 내의 함수
+        * concat
+        * join
+        * pop, push
+        * reverse
+        * shift
+        * slice
+        * sort
+        * splice
+            * 여러 활용가능 : 치환, insert
+            * insert함수는 본래 constructor내에 없음 -> 내가 만들기 가능 (extend)
+
+### ex12 ( 내장 객체 : Array )
+
+* extend prototype
+    * insert, remove등 Array 기능 확장
+    * "this"를 사용할 때는 어떤 것을 가리키는 지 항상 확인하기
