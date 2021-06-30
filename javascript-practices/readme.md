@@ -94,3 +94,34 @@ console.log("Hello World")
 * extend prototype
     * insert, remove등 Array 기능 확장
     * "this"를 사용할 때는 어떤 것을 가리키는 지 항상 확인하기
+
+
+## Function
+
+### ex 17
+
+* function constructor 내 함수
+    * 호출과 동시에 (dynamical하게) this binding
+        * apply
+            * this 변경 
+            ```js
+            f1.apply(o);       // this : o
+            ```
+        * call
+            * this 변경 
+            * 함수 variable 함께 지정 가능
+            ```js
+            f2.call(o,"hi");
+            ```
+    * 비동기 callback 함수에서의 this binding : js에서 보통 사용
+        * bind
+            ```js
+            // ch05의 tabbox.js
+            var tabBox = {
+                init: function() {
+                    console.log(this); // this : tabBox
+                    window.addEventListener("load", this.onWindowLoad.bind(this)); // onWindowLoad실행시 bind없으면 this element가 window가 됨, tabBox를 사용하기 위해 bind(this) or bind(tabBox)사용
+                },
+                onWindowLoad: ~~~
+            }
+            ```
