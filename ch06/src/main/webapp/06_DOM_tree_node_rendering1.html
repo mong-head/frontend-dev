@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.addEventListener("load",function(){
+	const h1Element = document.createElement("h1");			// h1 HTMLElement type node 생성
+	const textNode = document.createTextNode('Hello DOM');	// text Node type node 생성
+	h1Element.append(textNode); 							// h1 node에 text node 연결
+	
+	setTimeout(function(){
+		document.body.appendChild(h1Element);				// 상위 node인 body에 h1 element 연결
+	},3000);
+	
+})
+</script>
+</head>
+<body>
+	<h1>HTMLElement(DOM Tree Node) 추가하기 방법 1</h1>
+	<h3>client쪽 rendering</h3>
+	<p>
+		rendering : html 만들기
+	</p>
+</body>
+</html>

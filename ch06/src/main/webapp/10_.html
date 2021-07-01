@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    /**
+     * < JS event 종류 >
+     * 1. mouse event
+     *  - mouseclick
+     *  - mousedown
+     *  - mouseup
+     *  - mousedblclick
+     *  - 우리가 알고 있는 클릭
+     *      - mousedown mouseup mouseclick
+     *  - 우리가 알고 있는 더블 클릭
+     *      - mousedown mouseup mouseclick mousedown mouseup mouseclick mousedblclick
+     * 
+     * 2. keyboard event
+     *  - keydown
+     *  - keyup
+     *  - keypress
+     * 
+     * 3. form
+     *  - submit
+     * 
+     * 4. input
+     *  - focus
+     *  - blur
+     *  - change
+     * 
+     * 5. touch (mobile event)
+     * 
+     * < 용어 정리 >
+     * 1. Event Name : load, click, mousedown, submit등등
+     * 2. Event Attribute : DOM Event Model Level0, onload, onclick
+     * 3. Event Listener  : DOM Event Model Level2, function(){}
+     * 4. Event Model
+     *  - DOM의 HTMLElement의 Event Handler를 설정하는 방법에 대한 표준
+     *  - 종류
+     *      - DOM Level 0 Event Model 
+     *          : Inline Event Model ( X : 웹표준 아님)
+     *              태그 안에 onclick = '자바스크립트 코드' 넣는 것 
+     *          : Basic Event Model (고전적인 처리 방식, 기본 이벤트 처리 방식)
+     *              element.onclick = function(){...}
+     *              문제점 : event handler를 하나밖에 setting 못함
+     *      - DOM Level 2 Event Model
+     *          Obeserver pattern 적용, Listener(function, event handler) 등록 방식
+     *          Listener 등록 함수 / 제거 함수 존재
+     *          다중 event handler 등록 가능
+     *          : MS Internet explorer (<= 8 version)
+     *          : Standard - addEventListener/ removeEvenetListener
+     *              
+     */
+    window.addEventListener("load", function(){
+        document.getElementById('header-1').onclick = function(){
+            console.log('Event Modedl Level 0 - basic');
+        }
+
+        document.getElementById('header-2').addEventListener("click",function(){
+            console.log('Event Modedl Level 2');
+            //this.removeEventListener()
+        })
+    });
+</script>
+</head>
+<body>
+    <h1>DOM EVENT 처리</h1>
+    <h2 onclick='console.log("Event Modedl Level 0 - inline");'>Event Modedl Level 0 - inline</h2>
+    <h2 id = "header-1">Event Modedl Level 0 - basic</h2>
+    <h2 id = "header-2">Event Modedl Level 2</h2>
+
+
+</body>
+</html>
