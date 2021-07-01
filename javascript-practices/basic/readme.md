@@ -4,6 +4,8 @@
 
 console.log("Hello World")
 
+## primitive type variance
+
 ### ex02
 
 * variance
@@ -95,10 +97,72 @@ console.log("Hello World")
     * insert, remove등 Array 기능 확장
     * "this"를 사용할 때는 어떤 것을 가리키는 지 항상 확인하기
 
+### ex13 ( 내장 객체 : String )
+
+* method
+    * indexOf
+    * substr(start-index, 개수)
+    * substring(start-index, end-index)
+    * split
+
+### ex14 ( 내장 객체 : String )
+
+* url string
+    * escape : URL 전부 encoding, 잘 안씀, deprecated
+    * encodeURI : parameter 부분만 encoding - 쓸만함
+    * encodeURIComponent : 값만 encoding
+
+### ex15 ( 내장 객체 : Date )
+
+* Date 
 
 ## Function
 
-### ex 17
+### ex16
+
+* function 생성
+    * new 생성자 함수 : 사용 거의 안함
+    * literal : 많이 사용
+    * anonymous : callback시 등등 한 번만 쓸 때 많이 사용
+        ```js
+        // f4 : callback시 한 번만 사용되는 함수
+        var f4 = function(){
+            console.log("time out");
+        }
+        setTimeout(f4,1000);
+        // f4 -> ananymous function
+        setTimeout(() => {
+            console.log("time out");
+        }, 4000);
+        ```
+    * 즉시 실행 함수 : 결과만 중요하고 그 과정에 생기는 부수적인 변수들 없애기 위해 사용
+        ```js
+        var s = (function(a,b){
+            return a+b;
+        })(10,20);
+        ```
+    * 가변 파라미터 함수
+        * arguments로 받음
+        ```js
+        var sum = function() {
+            var s = 0;
+            // arguments : 유사 배열 (not real 배열)
+
+            // 구현 (Array.prototpye.forEach + caller 바꾸기)
+            Array.prototype.forEach.call(arguments, function(e){
+                // this가 바뀜
+                s += e;
+            })
+            return s;
+        }
+
+        // 가변 파라미터
+        console.log(sum(1,2));
+        console.log(sum(1,2,3,4));
+        console.log(sum(1,2,3,4,5,6));
+        ```
+
+### ex17
 
 * function constructor 내 함수
     * 호출과 동시에 (dynamical하게) this binding
