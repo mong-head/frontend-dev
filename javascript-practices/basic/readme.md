@@ -1,4 +1,4 @@
-# javascript practices
+# basic
 
 ### ex01
 
