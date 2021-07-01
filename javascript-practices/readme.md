@@ -120,7 +120,9 @@ console.log("Hello World")
             var tabBox = {
                 init: function() {
                     console.log(this); // this : tabBox
-                    window.addEventListener("load", this.onWindowLoad.bind(this)); // onWindowLoad실행시 bind없으면 this element가 window가 됨, tabBox를 사용하기 위해 bind(this) or bind(tabBox)사용
+                    window.addEventListener("load", this.onWindowLoad.bind(this)); 
+                    // onWindowLoad실행시 bind없으면 this element가 window가 됨
+                    // 이 함수 객체 내에서 tabBox를 사용하기 위해 bind(this) or bind(tabBox)사용
                 },
                 onWindowLoad: ~~~
             }

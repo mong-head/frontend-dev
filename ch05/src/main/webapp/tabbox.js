@@ -4,9 +4,9 @@
 var tabBox = {
 	init: function() {
 		console.log(this);
-		window.addEventListener("load", this.onWindowLoad.bind(this));
+		window.addEventListener("load", this._onWindowLoad.bind(this));
 	},
-	onWindowLoad: function() {
+	_onWindowLoad: function() {
 		var divTabBox = document.getElementsByClassName("tab-box")[0]; // array
 		console.log(divTabBox.childNodes); //[text, ul, text, div, text] : div 다음 text나올 수 있고, ul다음도 ...
 
@@ -15,10 +15,10 @@ var tabBox = {
 		
 		console.log(this);
 		for (var i = 0; i < liTabs.length; i++) {
-			liTabs[i].addEventListener("click", this.onTabClicked);
+			liTabs[i].addEventListener("click", this._onTabClicked);
 		}
 	},
-	onTabClicked: function() {
+	_onTabClicked: function() {
 		// unselected
 		var lisSelected = document.getElementsByClassName("selected");
 		(lisSelected.length == 1) && (lisSelected[0].className = "")
