@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>selector</title>
+	<script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			setTimeout(function () {
+				// chain
+				// $("#first , #fourth")
+				// 	.css("color","#f00")
+				// 	.css("font-size","2.0em")
+				// 	.css("font-weight","bold");
+
+				// json
+				$("#first , #fourth")
+					.css({
+						"color": "#f00",
+						"font-size":"2.0em",
+						"font-weight":"bold"
+					})
+			}, 2000);
+		});
+	</script>
+</head>
+
+<body>
+	<h1>selector - group</h1>
+	<ul>
+		<li class="red" id="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="blue" id="second"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="red" id="third"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li class="blue" id="fourth"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	</ul>
+
+</body>
+
+</html>
