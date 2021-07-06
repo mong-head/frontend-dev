@@ -69,5 +69,45 @@
     * 유사 배열
     * 
 
-## 4. DOM 조작 API
+## 4. selector
 
+* [tag, class로 선택](src/main/webapp/05_selector_tag_class.html)
+* [id](src/main/webapp/06_selector_id.html)
+* [하위](src/main/webapp/07_selector_descendent.html)
+* [모두](src/main/webapp/08_selector_all.html)
+* [그룹](src/main/webapp/09_selector_group.html)
+* [자식](src/main/webapp/10_selector_child.html)
+* [형제(인접)](src/main/webapp/11_selector_sibling.html)
+* [첫 자식](src/main/webapp/12_selector_first-child.html)
+* [속성](src/main/webapp/13_selector_attribute.html)
+* filter
+    * [first, last](src/main/webapp/14_selector_filter_fitst_last.html)
+    * [even, odd](src/main/webapp/15_selector_filter_even_odd.html)
+    * [contains, has](src/main/webapp/16_selector_filter_contains_has.html)
+
+## 5. DOM 조작 API
+
+예제 20번 ~ 34번
+
+* text : 태그 내의 내용
+* html
+* HTMLElement insert
+    * prepend : 지정 태그 내용 앞에 insert
+    * append : 지정 태그 내용 뒤에 insert
+    * before : 지정 태그 앞에 insert
+    * after : 지정 태그 뒤에 insert
+* HTMLElement 이동
+    * prependTo
+    * appendTo
+    * insertBefore
+    * insertAfter
+* wrap : 앞 뒤로 태그로 감싸기
+* wrapAll : 태그 그룹지어서 감싸기 가능
+* replaceWith
+* remove : element 제거
+* attr : DOM 조작보다는 element 속성 변경
+* addClass, removeClass : 많이 사용 - 보통 디자인은 css에서 담당
+
+## 6. PlugIn
+
+* jQuery constructor 내 함수 추가 (jQuery API 추가)
