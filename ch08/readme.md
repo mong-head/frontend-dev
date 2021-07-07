@@ -1,2 +1,2 @@
-# ch08 : jQuery
+# ch08 : AJAX
 
