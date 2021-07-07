@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,6 +39,15 @@ public class GuestbookApiController {
 		list.add(vo3);
 		
 		return JsonResult.success(list);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/add")
+	public JsonResult ex2(@RequestBody GuestbookVo vo) {
+		// 등록 작업 (GuestbookService)
+		vo.setNo(11L); // 본래라면 vo에 no담겨서 나옴 - 내코드도 그런지 확인
+		vo.setPassword(""); // 비번은 없애기
+		return JsonResult.success(vo);
 	}
 	
 }
