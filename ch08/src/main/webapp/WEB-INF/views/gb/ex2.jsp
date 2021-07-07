@@ -14,89 +14,83 @@
 	type="text/javascript"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-	var fetch = function() {
-		$.ajax({
-			url : "${pageContext.request.contextPath }/guestbook/api/list",
-			dataType : "json", // 받을 때 format
-			type : "get", // 요청 method
-			success : function(response) {
-				console.log(response);
-				response.data.forEach(function(vo) {
-					html = "<li data-no='"+ vo.no +"'><strong>" + vo.name
-							+ "</strong>" + "<p>" + vo.message + "</p>"
-							+ "<strong></strong>"
-							+ "<a href='' data-no='"+ vo.no + "'>삭제</a>"
-							+ "</li>";
+	var messageBox = function(type, message) {
 
-					$("#list-guestbook").append(html);
-				});
-			}
-		});
-	}
-
-	/* 	var messageBox = function(){
-	 $("#dialog-message").dialog({
-	 modal: true,
-	 buttons: {
-	 "확인": function(){
-	 // 확인 버튼 누르면 callback
-	 $(this).dialog("close");
-	 }
-	 }
-	 });
-	 } */
-
-	$(function() {
-		$("#add-form").submit(function(event) {
-			event.preventDefault(); // 막기
-
-			vo = {}
-			// validation
-			if ($("#input-name").val() == "") {
-				//alert("이름이 비어있습니다.");
-				// alert창 -> dialog 대체
-				//messageBox("error","이름이 비어있습니다.");
-				
-				$("#dialog-message").dialog({
-					modal : true,
-					buttons : {
-						"확인" : function() {
-							// 확인 버튼 누르면 callback
-							$(this).dialog("close");
-						}
+		if (type == 'error') {
+			$("#dialog-message p").text(message);
+			$("#dialog-message").dialog({
+				modal : true,
+				buttons : {
+					"확인" : function() {
+						// 확인 버튼 누르면 callback
+						$(this).dialog("close");
 					}
-				});
-
-				return;
-			}
-			
-			vo.name = $("#input-name").val();
-			
-			vo.password = $("#input-password").val();
-			
-			vo.message = $("#tx-content").val();
-			
-			// data 등록
-			$.ajax({
-				url: "${pageContext.request.contextPath }/guestbook/api/add",
-				dataType: "json",		// 받을 때 format
-				type: "post",			// 요청 method
-				contentType: "application/json",
-				data: JSON.stringify(vo),
-				success: function(response){
-					// rendering code
-					var vo = response.data;
-					html = 
-						"<li data-no='"+ vo.no +"'><strong>"+ vo.name + "</strong>" +
-							"<p>" + vo.message + "</p>" +
-							"<strong></strong>" +
-							"<a href='' data-no='"+ vo.no + "'>삭제</a>"+
-						"</li>";
-					
-					$("#list-guestbook").prepend(html);
 				}
 			});
-		});
+		}
+
+	}
+
+	$(function() {
+		$("#add-form")
+				.submit(
+						function(event) {
+							event.preventDefault(); // 막기
+
+							vo = {}
+							// validation
+							if ($("#input-name").val() == "") {
+								//alert("이름이 비어있습니다.");
+								// alert창 -> dialog 대체
+								messageBox("error", "이름이 비어있습니다.");
+								return;
+							}
+
+							if ($("#input-password").val() == "") {
+								//alert("이름이 비어있습니다.");
+								// alert창 -> dialog 대체
+								messageBox("error", "비밀번호가 비어있습니다.");
+								return;
+							}
+
+							if ($("#tx-content").val() == "") {
+								//alert("이름이 비어있습니다.");
+								// alert창 -> dialog 대체
+								messageBox("error", "메세지가 비어있습니다.");
+								return;
+							}
+
+							vo.name = $("#input-name").val();
+
+							vo.password = $("#input-password").val();
+
+							vo.message = $("#tx-content").val();
+
+							// data 등록
+							$
+									.ajax({
+										url : "${pageContext.request.contextPath }/guestbook/api/add",
+										dataType : "json", // 받을 때 format
+										type : "post", // 요청 method
+										contentType : "application/json",
+										data : JSON.stringify(vo),
+										success : function(response) {
+											// rendering code
+											var vo = response.data;
+											html = "<li data-no='"+ vo.no +"'><strong>"
+													+ vo.name
+													+ "</strong>"
+													+ "<p>"
+													+ vo.message
+													+ "</p>"
+													+ "<strong></strong>"
+													+ "<a href='' data-no='"+ vo.no + "'>삭제</a>"
+													+ "</li>";
+
+											$("#list-guestbook").prepend(html);
+										}
+									});
+						});
 	});
 </script>
 </head>
@@ -130,7 +124,7 @@
 			</ul>
 
 		</div>
-		<div id="dialog-message" title="example" style="display: none">
+		<div id="dialog-message" title="입력" style="display: none">
 			<p></p>
 		</div>
 	</div>
