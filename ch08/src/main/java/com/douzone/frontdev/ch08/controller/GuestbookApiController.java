@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -48,6 +49,21 @@ public class GuestbookApiController {
 		vo.setNo(11L); // 본래라면 vo에 no담겨서 나옴 - 내코드도 그런지 확인
 		vo.setPassword(""); // 비번은 없애기
 		return JsonResult.success(vo);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/delete/{no}")
+	public JsonResult ex3(@PathVariable("no") Long no, String password) {
+		// delete 작업 (GuestbookService)
+		Long data = 0L;
+		
+		// 1. delete 안됨
+		//data = -1L;
+		
+		// 2. delete 됨
+		data = no;
+		
+		return JsonResult.success(data);
 	}
 	
 }
