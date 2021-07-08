@@ -106,8 +106,17 @@
 * replaceWith
 * remove : element 제거
 * attr : DOM 조작보다는 element 속성 변경
-* addClass, removeClass : 많이 사용 - 보통 디자인은 css에서 담당
+* addClass, removeClass : 많이 사용 - 보통 디자인은 css에서 담당하기에 html에서는 디자인요소 빼고 클래스만 다루는 게 좋음
 
 ## 6. PlugIn
 
 * jQuery constructor 내 함수 추가 (jQuery API 추가)
+
+## 7. scroll event
+
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F998DEF475ADA8B953A" width="30%"/>
+
+* 정확한 공식 : dh = wh + st
+* dh <= wh + st + 10 공식 사용
+	* 스크롤이 거의 마지막에 내려왔을 때 콘솔 메세지 출력
+	* 10을 더하는 거는 딱 맞게 했을 때 못찾을 수 있어서 그럼
