@@ -13,7 +13,24 @@
 <script src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"
 	type="text/javascript"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="${pageContext.request.contextPath }/ejs/ejs.js"
+	type="text/javascript"></script>
 <script>
+	/* var render = function(vo, mode) {
+		html = "<li data-no='"+ vo.no +"'><strong>" + vo.name + "</strong>"
+				+ "<p>" + vo.message + "</p>" + "<strong></strong>"
+				+ "<a href='' data-no='"+ vo.no + "'>삭제</a>" + "</li>";
+
+		if (mode) {
+			$("#list-guestbook").append(html);
+		} else {
+			$("#list-guestbook").prepend(html);
+		}
+	} */
+	
+	var listItemEJS = new EJS({
+		url : "${pageContext.request.contextPath }/ejs/listitem-template.ejs"
+	})
 	var messageBox = function(type, message) {
 
 		if (type == 'error') {
@@ -32,65 +49,54 @@
 	}
 
 	$(function() {
-		$("#add-form")
-				.submit(
-						function(event) {
-							event.preventDefault(); // 막기
+		$("#add-form").submit(function(event) {
+			event.preventDefault(); // 막기
 
-							vo = {}
-							// validation
-							if ($("#input-name").val() == "") {
-								//alert("이름이 비어있습니다.");
-								// alert창 -> dialog 대체
-								messageBox("error", "이름이 비어있습니다.");
-								return;
-							}
+			vo = {}
+			// validation
+			if ($("#input-name").val() == "") {
+				//alert("이름이 비어있습니다.");
+				// alert창 -> dialog 대체
+				messageBox("error", "이름이 비어있습니다.");
+				return;
+			}
 
-							if ($("#input-password").val() == "") {
-								//alert("이름이 비어있습니다.");
-								// alert창 -> dialog 대체
-								messageBox("error", "비밀번호가 비어있습니다.");
-								return;
-							}
+			if ($("#input-password").val() == "") {
+				//alert("이름이 비어있습니다.");
+				// alert창 -> dialog 대체
+				messageBox("error", "비밀번호가 비어있습니다.");
+				return;
+			}
 
-							if ($("#tx-content").val() == "") {
-								//alert("이름이 비어있습니다.");
-								// alert창 -> dialog 대체
-								messageBox("error", "메세지가 비어있습니다.");
-								return;
-							}
+			if ($("#tx-content").val() == "") {
+				//alert("이름이 비어있습니다.");
+				// alert창 -> dialog 대체
+				messageBox("error", "메세지가 비어있습니다.");
+				return;
+			}
 
-							vo.name = $("#input-name").val();
+			vo.name = $("#input-name").val();
 
-							vo.password = $("#input-password").val();
+			vo.password = $("#input-password").val();
 
-							vo.message = $("#tx-content").val();
+			vo.message = $("#tx-content").val();
 
-							// data 등록
-							$
-									.ajax({
-										url : "${pageContext.request.contextPath }/guestbook/api/add",
-										dataType : "json", // 받을 때 format
-										type : "post", // 요청 method
-										contentType : "application/json",
-										data : JSON.stringify(vo),
-										success : function(response) {
-											// rendering code
-											var vo = response.data;
-											html = "<li data-no='"+ vo.no +"'><strong>"
-													+ vo.name
-													+ "</strong>"
-													+ "<p>"
-													+ vo.message
-													+ "</p>"
-													+ "<strong></strong>"
-													+ "<a href='' data-no='"+ vo.no + "'>삭제</a>"
-													+ "</li>";
-
-											$("#list-guestbook").prepend(html);
-										}
-									});
-						});
+			// data 등록
+			$.ajax({
+				url : "${pageContext.request.contextPath }/guestbook/api/add",
+				dataType : "json", // 받을 때 format
+				type : "post", // 요청 method
+				contentType : "application/json",
+				data : JSON.stringify(vo),
+				success : function(response) {
+					// rendering code
+					//var vo = response.data;
+					//render(vo, false);
+					html = listItemEJS.render(response.data);
+					$("#list-guestbook").prepend(html);
+				}
+			});
+		});
 	});
 </script>
 </head>
