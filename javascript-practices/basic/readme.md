@@ -191,3 +191,20 @@ console.log("Hello World")
                 onWindowLoad: ~~~
             }
             ```
+
+## module ex
+
+### common.js : require, exports/module.exports
+
+#### module01
+* export 사용해보기
+
+#### module02
+* module.exports 사용
+
+#### module03
+* 많이 쓰는 방식
+* exports 사용
+
+#### module04
+* 잘못 쓴 예제
