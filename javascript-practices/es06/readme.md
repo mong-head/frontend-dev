@@ -12,7 +12,7 @@
         * 상수
         * 값 변경 불가
 
-## 2. Template literal
+## 2. Template literal (ex03)
 
 * backtick (``` ` ` ```)
     * string interpolation(``` ${ } ```) 사용가능
@@ -26,7 +26,7 @@
     * ``` ${ } ```
     * 변수 사용 가능
 
-## 3. default parameter
+## 3. default parameter (ex04)
 
 * default parameter 지원
     * 호출시 변수 주지 않아도 default value 넣어줌
@@ -36,7 +36,7 @@
     }
     ```
 
-## 4. Arrow function
+## 4. Arrow function (ex05)
 
 * arrow function?
     ```js
@@ -67,7 +67,7 @@
     }
     ```
 
-## 5. Destructing (구조분해)
+## 5. Destructing (구조분해) (ex06)
 
 * destructing
     * array, object 속성 해체후, 그 값을 개별 변수에 담을 수 있게 함
@@ -120,3 +120,5 @@
             let [firstColor, secondColor, ...otherColors] = rainbow;
             console.log(firstColor,secondColor,otherColors); // red, orange, ['yellow','green']
             ```
+
+## 6. 비동기 (async)
