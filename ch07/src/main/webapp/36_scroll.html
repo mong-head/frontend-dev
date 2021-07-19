@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$( function() {
+		$(window).scroll(function(){
+			var $window = $(this); 
+
+			var windowHeight = $window.height(); // window 크기는 사용자가 매번 바꿀 수 있으므로 항상 높이 구하도록 함
+			var scrollTop = $window.scrollTop();
+			var documentHeight = $(document).height();
+
+			if(scrollTop + windowHeight + 10 > documentHeight){
+				console.log("fetch list")
+			}
+		});
+		
+	} );  
+</script>
+</head>
+<body>
+	<h1>DOM Event - scroll</h1>
+
+	<ul>
+		<li>
+			<strong>둘리1</strong>
+			<p>호이1</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리2</strong>
+			<p>호이2</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리3</strong>
+			<p>호이3</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리4</strong>
+			<p>호이4</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리6</strong>
+			<p>호이6</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리7</strong>
+			<p>호이7</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리8</strong>
+			<p>호이8</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리9</strong>
+			<p>호이9</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리10</strong>
+			<p>호이10</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리11</strong>
+			<p>호이11</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>둘리12</strong>
+			<p>호이12</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+	</ul>
+	
+</body>
+</html>

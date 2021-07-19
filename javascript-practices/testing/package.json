@@ -1,0 +1,14 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "* JS unit test tool 종류 (20가지 이상)\r * Jasmine, Qunit, Mocha, Jest 많이 씀\r * tool 소개\r     * Jasmine(2010 ~ now)\r         * JSUnit project\r             * JSUnit\r                 * Java : Junit == JavaScript : JSUnit\r                 * Java에서 Junit을 쓴다면, JS에서는 JSUnit을 씀\r         * 개발 중지, 2009년\r         * 자체 assertion O\r         * BDD 기반 dev standard testing에 맞는 문법 작성 가능\r     * QUnit\r         * DOM 직접 조작 application(jQueryr기반) test\r         * easy setting, easy testing, async test;promise 기반\r     * Mocha\r         * Node 기반 back-end applciation test\r         * async test;promise 기반\r         * assertion\r             * 자체 assertion X\r             * 외부 assertion O (chai, should.js, expect.js)\r     * Jest\r         * React dev test tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.0.2"
+  }
+}

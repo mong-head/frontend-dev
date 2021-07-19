@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* { padding: 0; margin: 0 }
+.header {
+	height: 100px;
+	width: 800px;
+	margin: 50px auto;
+	float: left;
+	
+}
+
+.logo , .search-box{
+	float: left;
+}
+
+.logo {
+	font-size:0;
+	width: 180px;
+	height: 94px;
+	background: url("https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png") no-repeat;
+	background-size: 180px 94px;
+	
+}
+
+.search-box {
+	height: 46px;
+	width: 520px;
+	border: 1px solid #0089ff;
+	display: block;
+	margin : 25px 10px;
+}
+
+.btn-search, .keyboard, input {
+	float: right;
+}
+
+input {
+	height: 26px;
+	width: 200px;
+	margin : 7px 0 0;
+	border: none;
+}
+
+.keyboard {
+	font-size: 0;
+	background: url("/ch03/images/daum-keyboard.jpg") no-repeat 0 0;
+	background-size: 30px 160px;
+}
+
+button {
+	font-size: 0;
+	background: url("/ch03/images/daum-split.jpg") no-repeat -40px -231px;
+	background-size: 250px 310px;
+	
+}
+
+
+
+</style>
+</head>
+<body>
+
+	<div class="header">
+		<h1 class="logo">Daum</h1>
+		<div class="search-box">
+			<div class="btn-search">
+				<button>button</button>
+			</div>
+			<a href="#" class="keyboard">keyboard</a>
+			<input type="text" />
+		</div>
+	</div>
+</body>
+</html>

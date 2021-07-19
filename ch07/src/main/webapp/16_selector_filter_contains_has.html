@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>selector</title>
+	<script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			setTimeout(function () {
+				$("li:contains('sample')").css("color","red");
+				$("li:has(strong)").css("color","blue");
+			}, 2000);
+		});
+	</script>
+</head>
+
+<body>
+	<h1>selector - jQuery filter(contains,has)</h1>
+	<ul>
+		<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li> <strong>텍스트 텍스트 텍스트 텍스트 텍스트</strong> </li>
+		<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		<li> sample 123456789 </li>
+	</ul>
+
+</body>
+
+</html>
