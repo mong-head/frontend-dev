@@ -1,0 +1,17 @@
+{
+  "name": "async",
+  "version": "1.0.0",
+  "description": "* testing\r     * no mocha\r         * [ex01](ex01)\r         * [ex02](ex02)\r         * [ex03](ex03) : ex02 testing",
+  "main": "ex01.js",
+  "scripts": {
+    "test": "npx mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.0.2"
+  },
+  "dependencies": {
+    "chai": "^4.3.4"
+  }
+}
