@@ -163,3 +163,29 @@
     const tr01 = new Triangle('red','yellow',10,20);
     tr01.draw();
     ```
+
+## 8. module export
+
+* ex08.mjs ([ex08.mjs](ex08.mjs))
+    * testing 공간
+
+* export default
+    * 특징
+        * 객체 분해 X
+        * 딱 하나만 가능
+        * module사용시 : ```import unnamedFunction from './ex08.01.mjs';```처럼 이름 명시해야함
+    * ex
+        * function([ex08.01.mjs](ex08.01.mjs))
+        * object([ex08.02.mjs](ex08.02.mjs))
+
+* export module with name
+    * 특징
+        * 객체 분해 가능 : ```import {subtract} from './ex08.04.mjs';```
+        * module 사용시 : 이름 명시하려면 ```import * as namedFunctions from './ex08.03.mjs';```이렇게 해야함
+    * ex
+        * [ex08.03.mjs](ex08.03.mjs)
+        * [ex08.04.mjs](ex08.04.mjs)
+* mixed export
+    * 사용 : ```import math,{add} from './ex08.05.mjs';```
+    * ex
+        * [ex08.05.mjs](ex08.05.mjs)
