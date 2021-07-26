@@ -122,3 +122,44 @@
             ```
 
 ## 6. 비동기 (async)
+
+## 7. class ([ex07](ex07.js))
+
+* class
+    * constructor 필수
+        * super() 호출 필수
+* extends(상속)
+    * overriding
+
+* ex
+    ```js
+    class Shape {
+        constructor(bg,ln){
+            this.bg = bg;
+            this.ln = ln;
+        }
+
+        draw(){
+            console.log('도형을 그릴 수 없음')
+        }
+        area(){
+            console.log('넓이 못 구함')
+        }
+    }
+
+    class Triangle extends Shape {
+        constructor(bg,ln,w,h){
+            super(bg,ln);
+            this.w = w;
+            this.h = h;
+        }
+
+        // override
+        draw(){
+            console.log(`Triangle: (bg:${this.bg},ln:${this.ln},w:${this.w},h:${this.h})`)
+        }
+    }
+
+    const tr01 = new Triangle('red','yellow',10,20);
+    tr01.draw();
+    ```
