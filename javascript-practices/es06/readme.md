@@ -189,3 +189,9 @@
     * 사용 : ```import math,{add} from './ex08.05.mjs';```
     * ex
         * [ex08.05.mjs](ex08.05.mjs)
+
+## 9. Stream [ex09.js](ex09.js)
+
+* map
+* filter
+* reduce
