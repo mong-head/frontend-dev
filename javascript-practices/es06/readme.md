@@ -193,5 +193,11 @@
 ## 9. Stream [ex09.js](ex09.js)
 
 * map
+    ```js
+    const arr = foods.map(food => ({no: food.no, name: food.name, q : food.quantity}));
+    ```
 * filter
+    ```js
+    const arr2 = foods.filter(food => food.quantity >= 20);
+    ```
 * reduce
